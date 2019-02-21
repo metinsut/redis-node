@@ -1,8 +1,8 @@
 import express from 'express';
-import Home from '../controllers/Home/home';
-import passportService from '../controllers/services/index';
-import { signUp, validateSignUp } from '../controllers/auth/signUp';
-import { signIn } from '../controllers/auth/signIn';
+import Home from '../home/home';
+import passportService from '../passport';
+import { signUp, validateSignUp } from '../auth/signUp';
+import { signIn } from '../auth/signIn';
 import {
    getUserById,
    uploadAvatar,
@@ -16,10 +16,10 @@ import {
    deleteFollower,
    deleteFollowing,
    getUserUnFollow,
-} from '../controllers/user';
-import { getPosts, getPostsByUser, uploadImage, resizeImage, addPost, deletePost } from '../controllers/post';
-import signOut from '../controllers/auth/signOut';
-import verifyUser from '../controllers/middleware/verifyUser';
+} from '../user';
+import { getPosts, getPostsByUser, uploadImage, resizeImage, addPost, deletePost } from '../post';
+import signOut from '../auth/signOut';
+import verifyUser from '../middleware/verifyUser';
 
 const router = express.Router();
 passportService();

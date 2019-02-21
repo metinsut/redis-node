@@ -6,9 +6,9 @@ import compression from 'compression';
 import morgan from 'morgan';
 import expressValidator from 'express-validator';
 import passport from 'passport';
-import database from './database';
+import database from './config/database';
 import optionsCors from './config/cors';
-import routes from './routes';
+import routes from './controllers/routes';
 
 const dev = process.env.NODE_ENV !== 'production';
 const port = process.env.PORT || 3000;
